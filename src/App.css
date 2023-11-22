@@ -1,0 +1,60 @@
+/* App.css */
+
+.chat-container {
+  height: calc(100vh - 120px); /* Adjust the height as needed */
+  overflow-y: auto;
+  padding: 10px;
+  background-color: #f0f0f0;
+}
+
+.container {
+  display: flex;
+  margin: 10px;
+}
+
+.me {
+  /* background-color: aqua; */
+  justify-content: flex-end;
+}
+
+.chatbox {
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 70%;
+  word-wrap: break-word;
+  background-color: #f4ecec;
+}
+
+.me .chatbox {
+  background-color: #DCF8C6;
+  flex-direction: row-reverse;
+}
+
+.btm {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+  padding: 10px;
+  position: sticky;
+  bottom: 0;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 30px;
+  background-color: #f0f0f0;
+  margin-right: 10px;
+  outline: none;
+}
+
+button {
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
