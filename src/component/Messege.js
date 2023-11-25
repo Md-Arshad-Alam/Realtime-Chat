@@ -10,7 +10,7 @@ import {
 
 import "../App.css";
 
-function Messege() {
+const Messege=()=> {
   const provider = new GoogleAuthProvider();
   const auth = getAuth();
 
@@ -26,15 +26,9 @@ function Messege() {
         console.log(token, user);
       })
       .catch((error) => {
-        // Handle Errors here.
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        // The email of the user's account used.
-        const email = error.email;
-        // The AuthCredential type that was used.
-        const credential = GoogleAuthProvider.credentialFromError(error);
-        // ...
+        console.error("Sign-in error:", error);
       });
+      
   };
 
   const [user, setUser] = useState("");
@@ -73,8 +67,9 @@ function Messege() {
   }, []);
 
 
-   useEffect(() => {
+  useEffect(() => {
     onAuthStateChanged(auth, (user) => {
+      console.log("User:", user);
       if (user) {
         setUser({ name: user.displayName, email: user.email });
       } else {
@@ -83,6 +78,7 @@ function Messege() {
       }
     });
   }, []);
+  
 
   const sendChat = () => {
     const chatRef = push(chatListRef);
